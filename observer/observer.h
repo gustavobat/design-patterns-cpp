@@ -10,6 +10,8 @@
 class Subject;
 
 class Observer : public std::enable_shared_from_this<Observer> {
+    friend class Subject;
+
 private:
     Subject *subject{nullptr};
 
@@ -17,8 +19,6 @@ public:
     Observer() = default;
 
     [[nodiscard]] Subject *get_subject() const;
-
-    void set_subject(Subject *new_subject);
 
     virtual void update() = 0;
 
