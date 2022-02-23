@@ -15,6 +15,8 @@ class Observer : public std::enable_shared_from_this<Observer> {
 private:
     Subject *subject{nullptr};
 
+    void set_subject(Subject *new_subject);
+
 public:
     Observer() = default;
 
