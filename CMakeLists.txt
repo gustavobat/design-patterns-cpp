@@ -6,3 +6,4 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_subdirectory(strategy)
 add_subdirectory(observer)
+add_subdirectory(decorator)
