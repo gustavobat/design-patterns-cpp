@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 
+// Base beverage class
 class Beverage {
 public:
     [[nodiscard]] virtual std::string description() const = 0;
@@ -15,6 +16,7 @@ public:
     virtual ~Beverage() = default;
 };
 
+// Concrete beverages
 class Espresso : public Beverage {
 public:
     [[nodiscard]] std::string description() const override { return "Espresso"; }
@@ -42,6 +44,7 @@ public:
     ~HouseBlend() override = default;
 };
 
+// Base decorator class
 class Decorator : public Beverage {
 private:
     Beverage *beverage;
@@ -53,6 +56,7 @@ public:
     ~Decorator() override = default;
 };
 
+// Concrete decorators
 class Mocha : public Decorator {
 public:
     explicit Mocha(Beverage *new_beverage) : Decorator(new_beverage) {}
